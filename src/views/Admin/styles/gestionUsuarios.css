@@ -1,0 +1,17 @@
+.wrapperinputs{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:2rem;
+}
+
+@media (max-width: 600px) {
+    .wrapperinputs {
+      flex-direction: column;
+      flex-direction: column-reverse;
+    }
+    .agregar{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        display: block;
+    }
+  }
