@@ -7,6 +7,7 @@ import { DashboardAdmin } from "./DashboardAdmin";
 import { DashboardCliente } from "./DashboardCliente";
 import { DashboardComite } from "./DashboardComite";
 import { DashboardGestor } from "./DashboardGestor";
+import { DashboardJefe } from "./DashboardJefe";
 import { DashboardMiembros } from "./DashboardMiembros";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
@@ -21,10 +22,10 @@ const AppRouter = () => {
         case "cliente":
             return <DashboardCliente/>
             break;
-        case "comite":
-            return <DashboardComite/>
+        case 2:
+            return <DashboardJefe/>
             break;
-        case "gestor":
+        case 1:
             return <DashboardGestor/>
             break;
         case "miembro":

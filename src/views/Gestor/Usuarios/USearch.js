@@ -1,13 +1,11 @@
 import React from 'react'
 
-
-const GestionProyectos = () => {
+const USearch = () => {
     return (
         <div>
-            
             
         </div>
     )
 }
 
-export default GestionProyectos
+export default USearch

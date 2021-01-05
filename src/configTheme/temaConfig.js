@@ -1,10 +1,9 @@
-import { createMuiTheme } from '@material-ui/core'
-import { blue } from '@material-ui/core/colors'
-import purble from '@material-ui/core/colors/purple'
+import { createMuiTheme, darken } from '@material-ui/core'
+
 const theme = createMuiTheme({
     palette:{
         primary:{
-            main:blue[500]
+            main:"#EDEDED"
         },
         secondary:{
             main:"#fffff"

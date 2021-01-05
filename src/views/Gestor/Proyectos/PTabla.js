@@ -3,16 +3,16 @@ import { DataGrid } from '@material-ui/data-grid';
 import { Button } from '@material-ui/core';
 import swal from 'sweetalert';
 import swaldos from '@sweetalert/with-react'
-import MEditar from './MEditar'
+import PEditar from './PEditar'
+import PButtoMenu from './PButtonMenu';
 
-
-const MTabla = (props) => {
+const PTabla = (props) => {
   const MEditarModal = (id) => {
-    swaldos(<MEditar id={id}/>)
+    swaldos(<PEditar id={id}/>)
   }
   const MEliminar = (id) => {
     swal({
-      title: `Quieres eliminar el registro con el id ${id}?`,
+      title: `Estas seguro de elminar el proyecto con el id de registro : ${id}`,
       text: "Once deleted, you will not be able to recover this imaginary file!",
       icon: "warning",
       buttons: true,
@@ -30,8 +30,15 @@ const MTabla = (props) => {
     });
   }
   const columns = [
+    { field: '', headerName: '', width: 50,renderCell: (params) => (
+      <PButtoMenu listMiembros={props.listMiembros} idProyecto={params.row.id} user={props.user} idJefe={params.row.jefe.id} idMet={params.row.met.id}/>
+    ), },
     { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'METnombre', headerName: 'Nombre', width: 300 },
+    { field: 'PROnombre', headerName: 'Nombre', width: 200},
+    { field: 'PROdescripcion', headerName: 'Descripcion', width: 200},
+    { field: 'PROestado', headerName: 'Estado', width: 100},
+    { field: 'PROfechainicio', headerName: 'Inicio', width: 150},
+    { field: 'PROfechafin', headerName: 'Fin', width: 150},
     {    
       field:'actions',
       headerName: 'Actions',
@@ -57,12 +64,11 @@ const MTabla = (props) => {
       ),
     },
   ];
-  
   return (
     <div style={{ height: 400, width: '100%' }}>
-      <DataGrid rows={props.rows} columns={columns} pageSize={5} checkboxSelection />
+      <DataGrid rows={props.rows} columns={columns} pageSize={5} />
     </div>
   );
 }
 
-export default MTabla
+export default PTabla

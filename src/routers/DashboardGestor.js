@@ -1,20 +1,20 @@
 import React from 'react'
 import ContainerScreen from '../components/ContainerScreen'
 import GestorList from '../components/NavList/GestorList'
-import GestionProyectos from '../views/Gestor/GestionProyectos'
 import { BrowserRouter as Router, Switch,Redirect, Route } from "react-router-dom";
 import Metodologia from '../views/Gestor/Metodologia/Metodologia';
 import Etapa from '../views/Gestor/Etapa/Etapa';
 import Entregable from '../views/Gestor/Entregable/Entregable';
 import Usuarios from '../views/Gestor/Usuarios/Usuarios';
 import ControlCambios from '../views/Gestor/ComiteCambios/ControlCambios';
+import Proyectos from '../views/Gestor/Proyectos/Proyectos';
 export const DashboardGestor = () => {
     return (
         <ContainerScreen component={<GestorList/>}>            
             <Router>
                 <Switch>
                     <Route exact path="/gestor/proyecto">
-                        <GestionProyectos />
+                        <Proyectos />
                     </Route>
                     <Route exact path="/gestor/metodologia">
                         <Metodologia />

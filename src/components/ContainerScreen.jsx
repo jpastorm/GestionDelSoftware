@@ -8,12 +8,13 @@ import Navbar from '../ui/Navbar'
 import NavLayout from './NavLayout'
 const styles = makeStyles(theme=>({
     root:{
-        display:"flex"
+        display:"flex",
+        backgroundColor:'#F9F9F9',
     },
     toolbar:theme.mixins.toolbar,
     content:{
         flexGrow:1,
-        backgroundColor:theme.palette.background.default,
+        backgroundColor:'#F9F9F9',
         padding:theme.spacing(3)
     }
 }))

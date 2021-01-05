@@ -10,7 +10,9 @@ const styles = makeStyles(theme=>({
         flexShrink:0,
     },
     drawerPaper:{
-        width:240
+        width:240,
+        background: "#2A3F54",
+        fontWeight:'bold'
     },
     toolbar:theme.mixins.toolbar
 }))
@@ -18,7 +20,7 @@ const NavLayout = ({component:Component,variant,onClose,open}) => {
     const classes = styles()
     return (
             <Drawer 
-                    className={classes.drawer}             
+                    className={classes.drawer}           
                     classes={{paper:classes.drawerPaper}}
                     anchor="left"
                     variant={variant}
