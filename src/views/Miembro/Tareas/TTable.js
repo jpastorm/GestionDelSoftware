@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { DataGrid } from '@material-ui/data-grid';
-import EditTarea from './EditTarea';
 import swal from '@sweetalert/with-react'
+import EditTarea from './EditTarea';
+
 
 export default function TTable({tareas,user,listTareas}) {
+
   const nombrarStado = (estado) => {
     switch (estado) {
       case "C":
@@ -48,7 +50,7 @@ export default function TTable({tareas,user,listTareas}) {
     swal(<EditTarea datos={datos} user={user} listTareas={listTareas}/>)
   }
   const columns = [
-    {    
+    {     
       field:'Detallar',
       headerName: 'Detallar',
       width: 130,
@@ -63,7 +65,7 @@ export default function TTable({tareas,user,listTareas}) {
       ),
     },
     { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'TARnombre', headerName: 'Nombre', width: 300 },
+    { field: 'TARnombre', headerName: 'Nombre', width: 250 },
     { field: 'TARfechainicio', headerName: 'Fecha Inicio', width: 130 },
     { field: 'TARfechafin', headerName: 'Fecha Fin', width: 130 },
     { field: 'TARdescripcion', headerName: 'Descripcion', width: 300 },

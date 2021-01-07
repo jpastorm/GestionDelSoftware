@@ -15,13 +15,13 @@ const PDetalle = (props) => {
                 auth: props.user.token
               }
         }).then(response=>{
-            console.log(response.data[0])
-            setNombreProyecto(response.data[0].PROnombre)
-            setEstado(response.data[0].PROestado)
-            setJefe(response.data[0].jefe.usuario.USUnombre)
-            setMetodologia(response.data[0].met.METnombre)
-            setFechaInicio(response.data[0].PROfechainicio)
-            setFechaFin(response.data[0].PROfechafin)
+            console.log(response.data)
+            setNombreProyecto(response.data.PROnombre)
+            setEstado(response.data.PROestado)
+            setJefe(response.data.jefe.usuario.USUnombre)
+            setMetodologia(response.data.met.METnombre)
+            setFechaInicio(response.data.PROfechainicio)
+            setFechaFin(response.data.PROfechafin)
         }).catch(e=>{
             console.log(e)
         })

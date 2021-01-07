@@ -40,9 +40,9 @@ const PTareas = (props) => {
             headers: {
                 auth: props.user.token
               }
-        }).then(response=>{
+        }).then(async response=>{
             swal("Registrado con exito!", "Se registro la tarea!", "success");
-
+            await listTareas()
         }).catch(e=>{
             console.log(e)
         })
@@ -70,14 +70,13 @@ const PTareas = (props) => {
     const [usuarioProyecto, setUsuarioProyecto] = useState([])
     const listProyectosMiembros = () =>{
         console.log(props)
-        AxiosCreate.get(`usuariosProyectos/proyecto/${props.id}`,{
+        AxiosCreate.get(`usuariosProyectos/usuario/proyecto/${props.id}`,{
             headers: {
                 auth: props.user.token
               }
         }).then(response=>{
-            console.log(response.data)
-            const usus = response.data.usu.filter(usu=>usu.USUtipo != 5)
-            setUsuarioProyecto(usus)
+            console.log(response.data)            
+            setUsuarioProyecto(response.data)
         }).catch(e=>{
             console.log(e)
         })
@@ -92,8 +91,7 @@ const listEntregableProyecto = () =>{
               }
         }).then(response=>{
             console.log(response.data)
-            const dataFilter = response.data.filter(rd => rd.pro.id == props.id)
-            setPru(dataFilter[0].pru.id)
+            const dataFilter = response.data.filter(rd => rd.pro.id == props.id)                        
             setEntregableProyecto(dataFilter)            
         }).catch(e=>{
             console.log(e)
@@ -175,7 +173,7 @@ const listEntregableProyecto = () =>{
                             {
                                     usuarioProyecto.map(up=>{
                                         return(
-                                        <option id={up.id} key={up.id}>{up.USUnombre} {up.USUApellido}</option>
+                                        <option id={up.id} key={up.id}>{up.usuario.USUnombre} {up.usuario.USUApellido}</option>
                                         )
                                     })
                                 }
@@ -217,7 +215,7 @@ const listEntregableProyecto = () =>{
                     <button className="btn btn-info" style={{fontSize:"2rem"}} onClick={onSubmit}>Guardar</button>
                 </div>
                 <div style={{marginTop:10,backgroundColor:"white"}}>
-                <TTable tareas={tareas}/>
+                <TTable tareas={tareas} listTareas={listTareas} user={props.user}/>
                 </div>
             </PContainer>
             

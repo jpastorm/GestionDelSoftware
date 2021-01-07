@@ -28,7 +28,7 @@ const AppRouter = () => {
         case 1:
             return <DashboardGestor/>
             break;
-        case "miembro":
+        case 3:
             return <DashboardMiembros/>
             break;
         default:

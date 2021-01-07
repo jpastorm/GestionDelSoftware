@@ -64,10 +64,10 @@ const JProyecto = () => {
                     detalle &&
                     <PDetalle showTableFn={showTableFn}  id={idProyecto} setShowTable={setShowTable} setTarea={setTarea} setEntregable={setEntregable} setDetalle={setDetalle} setEquipo={setEquipo} setIdProyecto={setIdProyecto} user={user}/>
                 }                            
-                {
+                {/* {
                     entregable &&
                     <PEntregables showTableFn={showTableFn} id={idProyecto} setShowTable={setShowTable} setTarea={setTarea} setEntregable={setEntregable} setDetalle={setDetalle} setEquipo={setEquipo} setIdProyecto={setIdProyecto} user={user}/>
-                }            
+                }             */}
                 {
                     tarea &&
                     <PTareas showTableFn={showTableFn} id={idProyecto} setShowTable={setShowTable} setTarea={setTarea} setEntregable={setEntregable} setDetalle={setDetalle} setEquipo={setEquipo} setIdProyecto={setIdProyecto} user={user} />
